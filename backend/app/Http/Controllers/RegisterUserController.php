@@ -17,6 +17,7 @@ class RegisterUserController extends Controller
         $data = $request->validated();
         $data['password'] = Hash::make($data['password']);
         $user = User::create($data);
+       
         event(new UserRegistered($user));
         
         return response()->json([
@@ -59,6 +60,8 @@ class RegisterUserController extends Controller
     public function updateUser(UpdateUserRequest $request, User $user)
     {
         $data = $request->validated();
+
+        
         if ($request->hasFile('profile_picture')) {
             $data['profile_picture'] = $request->file('profile_picture')->store('profile_pictures', 'public');
         }
@@ -68,7 +71,7 @@ class RegisterUserController extends Controller
         }
 
         $user->update($data);
-        
+
         return response()->json([
             'message' => 'Mise à jour réussie',
             'user' => new UserResource($user),
