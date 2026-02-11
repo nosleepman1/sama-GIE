@@ -26,14 +26,14 @@ class StoreUserRequest extends FormRequest
             'lastname' => 'required|string|min:3|max:50',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
-            'role' => 'required|string|in:admin,user,director',
-            'status' => 'required|string|in:active,inactive',
-            'phone' => 'required|string|min:10|max:15',
-            'address' => 'required|string|min:10|max:255',
-            'city' => 'required|string|min:3|max:50',
-            'district' => 'required|string|min:3|max:50',
-            'profile_picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'country' => 'required|string|min:3|max:50',
+            'role' => 'string|in:admin,user,director',
+            'status' => 'string|in:active,inactive',
+            'phone' => 'string|min:10|max:15',
+            'address' => 'string|min:10|max:255',
+            'city' => 'string|min:3|max:50',
+            'district' => 'string|min:3|max:50',
+            'profile_picture' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'country' => 'string|min:3|max:50',
         ];
     }
 
