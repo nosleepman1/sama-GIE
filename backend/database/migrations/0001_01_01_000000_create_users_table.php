@@ -20,12 +20,12 @@ return new class extends Migration
             $table->string('password');
             $table->enum('role', ['member','admin', 'director'])->default('member');
             $table->enum('status', ['active', 'inactive'])->default('active');
-            $table->string('phone');
-            $table->string('address');
-            $table->string('country');
-            $table->string('city');
-            $table->string('district');
-            $table->string('profile_picture');
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
+            $table->string('country')->nullable();
+            $table->string('city')->nullable();
+            $table->string('district')->nullable();
+            $table->string('profile_picture')->nullable();
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

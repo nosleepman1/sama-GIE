@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Events\UserRegistered;
 use App\Listeners\SendVerificationEmail;
 use App\Listeners\sendWelcomeEmail;
 use Illuminate\Auth\Events\Registered;
@@ -25,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Event::listen(
-            Registered::class,
+            UserRegistered::class,
             SendVerificationEmail::class
         );
 
