@@ -29,6 +29,7 @@ class EmailVerificationController extends Controller
         }
 
         $user->markEmailAsVerified();
+        
         Mail::to($user->getEmailForVerification())->send(new WelcomeUserEmail() );
 
         return response()->json([

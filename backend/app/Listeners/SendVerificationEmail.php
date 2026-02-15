@@ -3,12 +3,9 @@
 namespace App\Listeners;
 
 use App\Events\UserRegistered;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 
-class SendVerificationEmail implements ShouldQueue
+class SendVerificationEmail
 {
-    use InteractsWithQueue;
     /**
      * Create the event listener.
      */

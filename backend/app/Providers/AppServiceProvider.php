@@ -5,7 +5,6 @@ namespace App\Providers;
 use App\Events\UserRegistered;
 use App\Listeners\SendVerificationEmail;
 use App\Listeners\sendWelcomeEmail;
-use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
