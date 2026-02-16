@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\gie;
+use App\Models\Gie;
 use App\Http\Requests\StoregieRequest;
 use App\Http\Requests\UpdategieRequest;
 
 class GieController extends Controller
 {
+
+    public function __construct()
+    {
+        //policies
+        $this->authorizeResource(gie::class, 'gie');
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -21,7 +28,7 @@ class GieController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

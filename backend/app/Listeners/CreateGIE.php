@@ -2,8 +2,9 @@
 
 namespace App\Listeners;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
+use App\Events\CreateGIE as EventsCreateGIE;
+use App\Notifications\CreateGIENotification;
+
 
 class CreateGIE
 {
@@ -18,8 +19,8 @@ class CreateGIE
     /**
      * Handle the event.
      */
-    public function handle(object $event): void
+    public function handle(EventsCreateGIE $event): void
     {
-        //
+        $event->gie->notify(new CreateGIENotification());
     }
 }
