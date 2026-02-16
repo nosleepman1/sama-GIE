@@ -8,6 +8,13 @@ use App\Http\Requests\UpdategieRequest;
 
 class GieController extends Controller
 {
+
+    public function __construct()
+    {
+        //policies
+        $this->authorizeResource(gie::class, 'gie');
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -21,7 +28,7 @@ class GieController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
