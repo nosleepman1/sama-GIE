@@ -10,9 +10,14 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
+
     {
         Schema::create('gies', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('NINEA');
+            $table->string('address');
+            $table->foreignId('owner_id')->constrained('users');
             $table->timestamps();
         });
     }
