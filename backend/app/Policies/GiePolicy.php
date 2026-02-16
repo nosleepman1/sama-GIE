@@ -5,6 +5,7 @@ namespace App\Policies;
 use App\Models\User;
 use App\Models\gie;
 use Illuminate\Auth\Access\Response;
+use Illuminate\Support\Facades\Auth;
 
 class GiePolicy
 {
@@ -13,7 +14,7 @@ class GiePolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return $user->role === 'admin';
     }
 
     /**
@@ -21,7 +22,7 @@ class GiePolicy
      */
     public function view(User $user, gie $gie): bool
     {
-        return false;
+        return Auth::check();
     }
 
     /**
@@ -29,7 +30,7 @@ class GiePolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return Auth::check();
     }
 
     /**
@@ -37,7 +38,7 @@ class GiePolicy
      */
     public function update(User $user, gie $gie): bool
     {
-        return false;
+        return $user->id == $gie->owner_id;
     }
 
     /**
