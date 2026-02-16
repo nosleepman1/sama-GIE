@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-use App\Models\gie;
+use App\Models\Gie;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 

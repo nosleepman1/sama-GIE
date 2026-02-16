@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\gie;
+use App\Models\Gie;
 use App\Http\Requests\StoregieRequest;
 use App\Http\Requests\UpdategieRequest;
 
